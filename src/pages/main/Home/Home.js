@@ -107,7 +107,7 @@ class Home extends Component {
         barangBeli: data.barang_beli,
         barangStok: data.barang_stok,
         barangJual: data.barang_jual,
-        barangImage: `http://localhost:3001/backend1/api/${data.barang_image}`,
+        barangImage: `https://testreactjss.herokuapp.com/backend1/api/${data.barang_image}`,
         image: null,
       },
     });

@@ -94,21 +94,7 @@ class Cards extends Component {
       isUpdate: true,
       id: data.movie_id,
       form: {
-        // barangName: "",
-        // barangBeli: "",
-        // barangJual: "",
-        // barangStok: "",
-        // barangImage: null,
-        // image: null,
-        // movieName: data.movie_name,
-        // movieCategory: data.movie_category,
-        // movieReleaseDate: moment(data.movie_release_date).format("YYYY-MM-DD"),
-        // movieDuration: data.movie_duration,
-        // movieDirectedBy: data.movie_directed_by,
-        // movieCasts: data.movie_casts,
-        // movieSynopsis: data.movie_synopsis,
-        // movieImage: `http://localhost:3001/backend1/api/${data.movie_image}`,
-        // image: null,
+
       },
     });
   };
@@ -132,7 +118,7 @@ class Cards extends Component {
     } = this.state.form;
     // console.log("kotn", this.state.form);
     // console.log("kotn");
-    console.log("propsuuuuuuuuu", this.props);
+    // console.log("propsuuuuuuuuu", this.props);
 
     return (
       <>

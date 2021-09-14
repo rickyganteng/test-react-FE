@@ -20,7 +20,7 @@ class Cards extends Component {
         <Card style={{ width: "200px" }} className="mx-auto">
           <Card.Img
             variant="top"
-            src={`http://localhost:3001/backend1/api/${barang_image}`}
+            src={`https://testreactjss.herokuapp.com/backend1/api/${barang_image}`}
             className={styles.imgCard}
           />
           <Card.Body className="text-center">
