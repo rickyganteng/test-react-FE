@@ -8,7 +8,7 @@ import { Button, Image, Container, Row, Col, Form, Modal } from "react-bootstrap
 import styles from "./Home.module.css";
 
 
-import { deleteBarang, updateBarang } from "../../../redux/action/barang"
+import { deleteBarang, updateBarang, getAllBarang } from "../../../redux/action/barang"
 import ModalPost from "../../../components/formpost/formpost"
 import dummy from "../../../assets/img/no_image.jpg";
 
@@ -50,13 +50,18 @@ class Home extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("halo");
+    // console.log("halo");
     if (
       prevState.search !== this.state.search ||
       prevState.sort !== this.state.sort
     ) {
       this.setState({ page: 1 }, () => {
-        this.getBarang();
+        this.getBarang(
+          this.state.page,
+          this.state.limit,
+          this.state.sort,
+          this.state.search
+        );
       });
     }
 
@@ -266,7 +271,7 @@ class Home extends Component {
   render() {
 
     const { show, modalMsg, pagination, barangBeliValid, barangJualValid, barangStokValid, msg } = this.state
-    // console.log('databarang', this.state.databarang);
+    console.log('databarang', this.props);
     // console.log("DataMovUpcoming", this.state.dataMovUpcoming);
     // console.log("Databarang", this.state.databarang);
     const {
@@ -465,11 +470,10 @@ class Home extends Component {
 }
 
 
-const mapDispatchToProps = { deleteBarang, updateBarang };
+const mapDispatchToProps = { deleteBarang, updateBarang, getAllBarang };
 
 const mapStateToProps = (state) => ({
-  movie: state.movie,
-  barang: state.barang,
+  barang: state,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

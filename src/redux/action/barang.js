@@ -4,7 +4,7 @@ export const getAllBarang = (page, limit, sortBy, search) => {
   return {
     type: "GET_ALL_BARANG",
     payload: axiosApiIntances.get(
-      `?page=${page}&limit=${limit}&keywords=${search}&sort=${sortBy}`
+      `/?page=${page}&limit=${limit}&keywords=${search}&sort=${sortBy}`
     ),
   };
 };
